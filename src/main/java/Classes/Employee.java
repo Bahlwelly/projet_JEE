@@ -1,28 +1,34 @@
-package Classes;
+package classes;
 import org.mindrot.jbcrypt.BCrypt;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 public class Employee {
 	private String id;
 	private String nom;
 	private String prenom;
-	private String NSS;
+	private String nss;
 	private String email;
 	private String tele;
-	private String motPassHash;
+	@JsonProperty("motpasshash")
+	private String motpasshash;
 	private Roles role;
 	private String adress;
-	private String iDdepartement;
-	
+	@JsonProperty("iddepartement")
+	private String iddepartement;
+	public Employee() {
+		
+	}
 	public Employee (String id, String nom, String prenom, String NSS, String email, String tele, String motPassHash, Roles role, String adress, String idDepartement) {
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.NSS = NSS;
+		this.nss = NSS;
 		this.email = email;
 		this.tele = tele;
 		this.adress = adress;
 		this.role = role;
-		this.iDdepartement = idDepartement;
-		this.motPassHash = HashMotPass(motPassHash);
+		this.iddepartement = idDepartement;
+		this.motpasshash = HashMotPass(motPassHash);
 				
 	}
 	
@@ -31,7 +37,7 @@ public class Employee {
 	}
 	
 	public boolean verifierMotDePasse(String motDePasse) {
-        return BCrypt.checkpw(motDePasse, this.motPassHash);
+        return BCrypt.checkpw(motDePasse, this.motpasshash);
     }
 	
 	public void setId(String id) {
@@ -59,11 +65,11 @@ public class Employee {
 	}
 	
 	public void setNSS(String nSS) {
-		NSS = nSS;
+		nss = nSS;
 	}
 	
 	public String getNSS() {
-		return NSS;
+		return nss;
 	}
 	
 	public void setEmail(String email) {
@@ -90,11 +96,11 @@ public class Employee {
 	}
 	
 	public void setiDdepartement(String iDdepartement) {
-		this.iDdepartement = iDdepartement;
+		this.iddepartement = iDdepartement;
 	}
 	
 	public String getiDdepartement() {
-		return iDdepartement;
+		return iddepartement;
 	}
 	
 	public void setRole(Roles role) {

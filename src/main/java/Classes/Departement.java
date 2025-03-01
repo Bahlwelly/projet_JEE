@@ -1,4 +1,4 @@
-package Classes;
+package classes;
 
 public class Departement {
 	private String id;
