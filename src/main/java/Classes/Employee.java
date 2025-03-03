@@ -1,4 +1,4 @@
-package classes;
+package Classes;
 import org.mindrot.jbcrypt.BCrypt;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
