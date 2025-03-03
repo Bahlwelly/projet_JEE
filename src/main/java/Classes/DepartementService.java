@@ -27,7 +27,7 @@ public class DepartementService {
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Departement getDepartById (String id) {
+	public Departement getDepartById (@PathParam("id") String id) {
 		return depDao.getDepartById(id);
 	}
 	
@@ -39,5 +39,9 @@ public class DepartementService {
 	}
 	
 	
-	
+	@DELETE
+	@Path("/{id}")
+	public void deleteDepart (@PathParam("id") String id) {
+		depDao.deleteDepart(id);
+	}
 }
