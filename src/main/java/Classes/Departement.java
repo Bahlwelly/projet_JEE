@@ -6,6 +6,9 @@ public class Departement {
 	private Integer nombre_employees;
 	private String id_responsable;
 	
+	public Departement () {
+		
+	}
 	public  Departement( String id, String nom, Integer nombre_employee, String id_responsable ) {
 		this.id = id;
 		this.nom = nom;

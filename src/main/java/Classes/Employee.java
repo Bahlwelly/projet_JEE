@@ -16,7 +16,12 @@ public class Employee {
 	@JsonProperty("iddepartement")
 	private String iddepartement;
 	public Employee() {
+		this.id="0";
+		this.nom="Admin";
+		this.motpasshash="Admin";
+		this.role=Roles.ADMIN;
 		
+				
 	}
 	public Employee (String id, String nom, String prenom, String NSS, String email, String tele, String motPassHash, Roles role, String adress, String idDepartement) {
 		this.id = id;
